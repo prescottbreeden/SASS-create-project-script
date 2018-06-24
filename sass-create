@@ -18,7 +18,7 @@ HTML_BOILER='<!DOCTYPE html>
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>'${PROJECT_NAME}'</title>
 	<link rel="stylesheet" href="public/css/style.css">
-	<script src="app.js"></script>
+	<script src="public/app.js"></script>
 </head>
 <body>
 	<h1>Welcome to '${PROJECT_NAME}'!<h1>
