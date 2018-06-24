@@ -1,5 +1,7 @@
 # SASS-create-project-script
 SASS automated create and destroy project script
+
+# Folders created:
 -.
 -├── index.html
 -├── package-lock.json
