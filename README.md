@@ -60,6 +60,8 @@ SASS automated create and destroy project script to reduce the time it takes to 
 - **_WARNING** sass-destroy will permanently delete all files created or modified during sass-create!_
 
 ### Notes:
-_NPM simplifies the tools for SASS workflow; it does not limit the types of projects it can be integrated with (i.e. Django, ASP.NET Core, etc.).
+_NPM simplifies the tools for SASS workflow; it does not limit the types of projects it can be integrated with (i.e. Django, ASP.NET Core, etc.)._
 
-_If you are building in a framework like Django that does not prefer a single location for style-sheets, an easy solution is to add npm scripts for each app so your watcher will export the necessary css to each app.  You can see an example of this at github.com/prescottbreeden/ultimate_fan_project
+If you are building in a framework like Django that does not prefer a single location for style-sheets, an easy solution is to add npm scripts for each app so your watcher will export the necessary css to each app.  You can see an example of this at github.com/prescottbreeden/ultimate_fan_project
+
+Naturally this script is not the end-all solution for various preferences but feel free to edit the script to taylor it for your own personal needs!
