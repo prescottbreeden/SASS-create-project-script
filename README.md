@@ -2,7 +2,10 @@
 SASS automated create and destroy project script
 
 ## Folders & Files Created:
-- index.html  
+- index.html
+- .git
+- .gitignore
+- package.json _(uses your default npm init settings)_
 - package-lock.json  
 - **public**  
     - app.js  
