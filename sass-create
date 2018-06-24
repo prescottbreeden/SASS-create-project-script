@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # automate the initialization of a new css project
+npm init -y
 
 read -p 'Would you like to create an index.html?: ' CREATE_HTML
-
 
 # initialize file structure and install sass dependencies
 if [[ "${CREATE_HTML}" == 'y' ]]
@@ -22,7 +22,7 @@ HTML_BOILER='<!DOCTYPE html>
 </head>
 <body>
 	<h1>Welcome to '${PROJECT_NAME}'!<h1>
-	<p>github.com/prescottbreeden/sass-project-builder</p>
+	<p>github.com/prescottbreeden/SASS-create-project-script</p>
 </body>
 </html>'
 
