@@ -50,4 +50,4 @@ SASS automated create and destroy project script
 - In terminal, run: "mv sass-create /usr/local/bin" and "mv sass-destroy /usr/local/bin"
 - Navigate to an empty project directory and run "create-sass"
 - If the output of the script was unexpected and you need to remove it, run "sass-destroy"
-** WARNING ** sass-destroy will permanently delete all files created or modified during sass-create!
+- ** WARNING ** sass-destroy will permanently delete all files created or modified during sass-create!
