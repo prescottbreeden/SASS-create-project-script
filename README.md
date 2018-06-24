@@ -1,40 +1,40 @@
 # SASS-create-project-script
 SASS automated create and destroy project script
 
-# Folders created:
--.
--├── index.html
--├── package-lock.json
--├── public
--│   ├── app.js
--│   └── css
--│       └── styles.css
--└── sass
--    ├── abstracts
--    │   ├── _functions.scss
--    │   ├── _mixins.scss
--    │   └── _variables.scss
--    ├── base
--    │   ├── _animations.scss
--    │   ├── _base.scss
--    │   ├── _typography.scss
--    │   └── _utilities.scss
--    ├── layouts
--    │   ├── _footer.scss
--    │   ├── _header.scss
--    │   └── _navigation.scss
--    ├── main.scss
--    └── pages
--        └── _home.scss
+## Folders created:
+.
+├── index.html
+├── package-lock.json
+├── public
+│   ├── app.js
+│   └── css
+│       └── styles.css
+└── sass
+    ├── abstracts
+    │   ├── _functions.scss
+    │   ├── _mixins.scss
+    │   └── _variables.scss
+    ├── base
+    │   ├── _animations.scss
+    │   ├── _base.scss
+    │   ├── _typography.scss
+    │   └── _utilities.scss
+    ├── layouts
+    │   ├── _footer.scss
+    │   ├── _header.scss
+    │   └── _navigation.scss
+    ├── main.scss
+    └── pages
+        └── _home.scss
         
-# Installs node packages for:
+## Installs node packages for:
 - node-sass
 - postcss-cli
 - concat
 - npm-run-all
 - hoek (to override critical secrutity warning from node-sass hoek version)
 
-# Recommended Package.json Scripts:
+## Recommended Package.json Scripts:
     "scripts": {
       "watch:sass": "node-sass sass/main.scss public/css/style.css -w",
       "compile:sass": "node-sass sass/main.scss public/css/style.comp.css",
