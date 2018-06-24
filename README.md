@@ -1,7 +1,7 @@
 # SASS-create-project-script
 SASS automated create and destroy project script
 
-## Folders created:
+## Folders & Files Created:
 - index.html  
 - package-lock.json  
 - **public**  
@@ -26,12 +26,12 @@ SASS automated create and destroy project script
     - **pages**  
         - _home.scss
         
-## Installs node packages for:
+## Installs Node Packages as Dev Dependencies:
 - node-sass
 - postcss-cli
 - concat
 - npm-run-all
-- hoek (to override critical secrutity warning from node-sass hoek version)
+- hoek _(to override audit warnings from standard node-sass hoek version)_
 
 ## Recommended Package.json Scripts:
     "scripts": {
@@ -51,4 +51,4 @@ SASS automated create and destroy project script
 - In terminal, run: "mv sass-create /usr/local/bin" and "mv sass-destroy /usr/local/bin"
 - Navigate to an empty project directory and run "create-sass"
 - If the output of the script was unexpected and you need to remove it, run "sass-destroy"
-- __WARNING__ sass-destroy will permanently delete all files created or modified during sass-create!
+- **_WARNING** sass-destroy will permanently delete all files created or modified during sass-create!_
