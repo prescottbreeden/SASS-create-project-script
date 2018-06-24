@@ -4,26 +4,26 @@ SASS automated create and destroy project script
 ## Folders created:
 - index.html  
 - package-lock.json  
-- **public/**  
+- **public**  
     - app.js  
-    - **css/**  
+    - **css**  
         - styles.css  
-- **sass/**
+- **sass**
     - main.scss
-    - **abstracts/**  
+    - **abstracts**  
         - _functions.scss  
         - _mixins.scss  
         - _variables.scss  
-    - **base/**  
+    - **base**  
         - _animations.scss  
         - _base.scss  
         - _typography.scss  
         - _utilities.scss  
-    - **layouts/**  
+    - **layouts**  
         - _footer.scss  
         - _header.scss  
         - _navigation.scss  
-    - **pages/**  
+    - **pages**  
         - _home.scss
         
 ## Installs node packages for:
