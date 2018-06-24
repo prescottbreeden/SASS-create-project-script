@@ -24,7 +24,7 @@ SASS automated create and destroy project script
     │   └── _navigation.scss  
     ├── main.scss  
     └── pages  
-        └── _home.scss  
+        └── _home.scss
         
 ## Installs node packages for:
 - node-sass
