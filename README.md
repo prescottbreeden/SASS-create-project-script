@@ -44,7 +44,7 @@ SASS automated create and destroy project script to reduce the time it takes to 
       "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' public/css/style.comp.css -o public/css/style.prefix.css",
       "compress:css": "node-sass public/css/style.prefix.css public/css/style.css --output-style compressed",
       "build:css": "npm-run-all compile:sass prefix:css compress:css",
-	  "compress:js": "node-minify --compressor 'gcc' --input 'public/js/app.js --output 'static/js/app.min.js'"
+	  "compress:js": "node-minify --compressor 'gcc' --input 'public/js/app.js --output 'public/js/app.min.js'"
     },
 
 # Installation
