@@ -51,7 +51,7 @@ SASS_IMPORTS="@import 'abstracts/_functions';
 echo '___ CREATING FILE STRUCTURE FOR SASS >>>'
 
 mkdir -p public/css public/js
-touch public/css/style.css public/js/app.js
+touch public/css/styles.css public/js/app.js
 
 # create folders sass > abstracts base layouts
 mkdir -p sass/abstracts sass/base sass/components sass/layouts sass/pages
