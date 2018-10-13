@@ -17,7 +17,7 @@ HTML_BOILER='<!DOCTYPE html>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>'${PROJECT_NAME}'</title>
-	<link rel="stylesheet" href="public/css/style.css">
+	<link rel="stylesheet" href="public/css/styles.css">
 	<script src="public/app.js"></script>
 </head>
 <body>
@@ -95,5 +95,6 @@ echo 'node_modules/' > .gitignore
 #sed -i 's/"test": "echo \\"Error: no test specified\\" && exit 1"/"balls": "echo \\"Yay, we did a thing!\\""/g' package.json
 
 else
+	echo '___ GIT NOT INITIALIZED ___'
 	echo '___ SCRIPT COMPLETED ___'
 fi
