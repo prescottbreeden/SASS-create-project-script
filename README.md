@@ -1,5 +1,5 @@
 # SASS-create-project-script v1.1
-SASS automated create and destroy project script to reduce the time it takes to create modular sass files.  
+Bash script to generate modular SCSS folder structure for writing and organizing maintainable style sheets.  
 
 ## Folders & Files Created:
 - index.html
@@ -44,7 +44,7 @@ SASS automated create and destroy project script to reduce the time it takes to 
       "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' public/css/styles.comp.css -o public/css/styles.prefixed.css",
       "compress:css": "node-sass public/css/styles.prefixed.css public/css/styles.css --output-style compressed",
       "build:css": "npm-run-all compile:sass prefix:css compress:css",
-      "compress:js": "node-minify --compressor 'gcc' --input 'public/js/app.js --output 'public/js/app.min.js'"
+      "compress:js": "node-minify --compressor 'gcc' --input 'public/js/app.js' --output 'public/js/app.min.js'"
     },
 
 # Installation
