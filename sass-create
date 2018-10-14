@@ -10,6 +10,17 @@ if [[ "${CREATE_HTML}" == 'y' ]]
 then
 	read -p 'Enter a title for index.html: ' PROJECT_NAME
 
+SCRIPT_CODE_BLOCK='
+	"scripts": {
+		"watch:sass": "node-sass sass/main.scss public/css/styles.css -w",
+		"compile:sass": "node-sass sass/main.scss public/css/styles.comp.css",
+		"prefix:css": "postcss --use autoprefixer -b '"'"'last 10 versions'"'"' public/css/styles.comp.css -o public/css/styles.prefixed.css",
+		"compress:css": "node-sass public/css/styles.prefixed.css public/css/styles.css --output-style compressed",
+		"build:css": "npm-run-all compile:sass prefix:css compress:css",
+		"compress:js": "node-minify --compressor '"'"'gcc'"'"' --input '"'"'public/js/app.js'"'"' --output '"'"'public/js/app.min.js'"'"'"
+	},
+'
+
 HTML_BOILER='<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,11 +29,128 @@ HTML_BOILER='<!DOCTYPE html>
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>'${PROJECT_NAME}'</title>
 	<link rel="stylesheet" href="public/css/styles.css">
-	<script src="public/app.js"></script>
+	<script src="public/js/app.js"></script>
 </head>
 <body>
-	<h1>Welcome to '${PROJECT_NAME}'!<h1>
-	<p>github.com/prescottbreeden/SASS-create-project-script</p>
+	<header class="header">
+		<div class="logo">
+			<img src="https://upload.wikimedia.org/wikipedia/commons/9/96/Sass_Logo_Color.svg" alt="sass logo">
+		</div>
+		<div class="header__top">
+			<h1 class="header__top--title">SASS-create-project-script<h1>
+			<p class="header__top--desc">Version 1.1</p>
+		</div>
+		<div class="header__details">
+			<p class="header__details--link">
+				<a 
+					target="_blank"
+					class="header__details--link-tag"
+					href="https://github.com/prescottbreeden/sass-create-project-script">
+					github.com/prescottbreeden/SASS-create-project-script
+				</a>
+			</p>
+		</div>
+	</header>
+	<main class="main">
+		<h2 class="main__about">
+			Pre-modularized SCSS folder structure for writing and 
+			organizing maintainable style sheets
+		</h2>
+		<h2 class="main__heading">Recommended Scripts:</h2>
+		<div class="main__scripts">
+			<p class="main__overview--text">
+				Add the following scripts below to your 
+				package.json file inside the "scripts" key.
+			</p>
+			<pre>
+				<code class="main__scripts--codeblock">
+				'${SCRIPT_CODE_BLOCK}'
+				</code>
+			</pre>
+			<div class="main__scripts--commands">
+				<div class="main__scripts--commands-row">
+					<p class="main__scripts--commands-label">Function</p>
+					<p class="main__scripts--commands-cmd">Command line</p>
+					<p class="main__scripts--commands-desc">Description</p>
+				</div>
+				<div class="main__scripts--commands-row">
+					<p class="main__scripts--commands-label">Watch SASS:</p>
+					<p class="main__scripts--commands-cmd"> npm run watch:sass </p>
+					<p class="main__scripts--commands-desc">
+						Auto-exports saved changes in scss to css file for development
+					</p>
+				</div>
+				<div class="main__scripts--commands-row">
+					<p class="main__scripts--commands-label">Compile SASS:</p>
+					<p class="main__scripts--commands-cmd"> npm run compile:sass </p>
+					<p class="main__scripts--commands-desc">
+						Compiles all SCSS in main.scss
+					</p>
+				</div>
+				<div class="main__scripts--commands-row">
+					<p class="main__scripts--commands-label">Auto-prefix CSS:</p>
+					<p class="main__scripts--commands-cmd"> npm run prefix:css </p>
+					<p class="main__scripts--commands-desc">
+						Adds prefixes for CSS with last 10 browser versions 
+					</p>
+				</div>
+				<div class="main__scripts--commands-row">
+					<p class="main__scripts--commands-label">Compress CSS:</p>
+					<p class="main__scripts--commands-cmd"> npm run compress:css </p>
+					<p class="main__scripts--commands-desc">
+						Minifies CSS
+					</p>
+				</div>
+				<div class="main__scripts--commands-row">
+					<p class="main__scripts--commands-label">Build CSS:</p>
+					<p class="main__scripts--commands-cmd"> npm run build:css </p>
+					<p class="main__scripts--commands-desc">
+						Runs Compile, Auto-prefix, and Compress for production
+					</p>
+				</div>
+				<div class="main__scripts--commands-row">
+					<p class="main__scripts--commands-label">Compress JS:</p>
+					<p class="main__scripts--commands-cmd"> npm run compress:js </p>
+					<p class="main__scripts--commands-desc">
+						Minifies app.js file
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<h2 class="main__heading">Folder Structure:</h2>
+		<div class="main__folders">
+			<pre class="main__folders--tree">
+		<font color="#839496"><b>.</b></font>
+		├── index.html
+		├── package.json
+		├── <font color="#839496"><b>node_modules</b></font>
+		├── <font color="#839496"><b>public</b></font>
+		│   ├── <font color="#839496"><b>css</b></font>
+		│   │   └── styles.css
+		│   └── <font color="#839496"><b>js</b></font>
+		│       └── app.js
+		└── <font color="#839496"><b>sass</b></font>
+			├── <font color="#839496"><b>abstracts</b></font>
+			│   ├── _functions.scss
+			│   ├── _mixins.scss
+			│   └── _variables.scss
+			├── <font color="#839496"><b>base</b></font>
+			│   ├── _animations.scss
+			│   ├── _base.scss
+			│   ├── _typography.scss
+			│   └── _utilities.scss
+			├── <font color="#839496"><b>components</b></font>
+			├── <font color="#839496"><b>layouts</b></font>
+			│   ├── _footer.scss
+			│   ├── _header.scss
+			│   └── _navigation.scss
+			├── main.scss
+			└── <font color="#839496"><b>pages</b></font>
+				└── _home.scss
+			</pre>
+		</div>
+	</main>
 </body>
 </html>'
 
@@ -46,6 +174,97 @@ SASS_IMPORTS="@import 'abstracts/_functions';
 
 @import 'pages/_home';"
 
+HTML_STYLING="
+* {
+  margin: 0;
+  padding: 0; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  background-color: #333;
+  color: #eee; }
+
+.logo {
+  position: absolute;
+  top: 2rem;
+  left: 5rem; }
+  .logo img {
+    height: 15rem;
+    width: auto; }
+
+.header {
+  height: 20rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: steelblue;
+  text-align: center; }
+  .header__top--title {
+    font-size: 5rem; }
+  .header__top--desc {
+    font-style: italic; }
+  .header__details {
+    font-size: 2rem; }
+    .header__details--link-tag {
+      padding: 4px;
+      text-decoration: none;
+      border-bottom: 1px solid #eee;
+      color: #eee; }
+      .header__details--link-tag:hover {
+        color: white;
+        border-bottom: 1px solid red; }
+
+.main {
+  padding: 3rem; }
+  .main__about {
+    text-align: center;
+    font-size: 4rem; }
+  .main__heading {
+    margin-top: 3rem;
+    font-size: 3rem; }
+  .main__overview--text {
+    font-size: 2rem; }
+  .main__scripts {
+    margin-top: 1rem; }
+    .main__scripts--codeblock {
+      font-size: 1.3rem; }
+    .main__scripts--commands {
+      background-color: steelblue;
+      padding: 2rem;
+      font-size: 2rem;
+      width: 80%;
+      margin: 0 auto;
+      border-radius: 5px; }
+      .main__scripts--commands-row {
+        margin: 1rem;
+        padding: .3rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center; }
+      .main__scripts--commands-row:first-child {
+        text-transform: uppercase;
+        font-weight: 700;
+        border-bottom: 1px solid #eee; }
+      .main__scripts--commands-row:first-child .main__scripts--commands-desc {
+        font-size: 2rem;
+        font-style: inherit; }
+      .main__scripts--commands-row:nth-child(2) {
+        border: 3px solid green; }
+      .main__scripts--commands-row:nth-child(6) {
+        border: 3px solid green; }
+      .main__scripts--commands-label {
+        width: 25%; }
+      .main__scripts--commands-cmd {
+        width: 30%; }
+      .main__scripts--commands-desc {
+        width: 50%;
+        font-size: 1.6rem;
+        font-style: italic; }
+  .main__folders--tree {
+    font-size: 2rem; }
+"
 
 
 echo '___ CREATING FILE STRUCTURE FOR SASS >>>'
@@ -69,6 +288,7 @@ touch sass/layouts/_footer.scss sass/layouts/_header.scss sass/layouts/_navigati
 touch sass/pages/_home.scss 
 
 echo "${SASS_IMPORTS}" > sass/main.scss
+echo "${HTML_STYLING}" > public/css/styles.css
 
 # install dev dependencies
 echo '___ INSTALLING DEV DEPENDENCIES >>>'
