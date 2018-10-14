@@ -55,8 +55,8 @@ SASS automated create and destroy project script to reduce the time it takes to 
 ### Steps to Install:
 1. Install npm globally (see: https://docs.npmjs.com/cli/install)
 2. Clone or download this repository
-3. Move the create script to your bin path by executing: "mv sass-create /usr/local/bin"
-4. Move the destroy script to your bin path by executing: "mv sass-destroy /usr/local/bin" _(optional)_
+3. Move the create script to your bin path by executing: "mv sass-create /usr/local/bin" (MacOS/Linux)
+4. Move the destroy script to your bin path by executing: "mv sass-destroy /usr/local/bin" (MacOS/Linux) _(optional)_
 
 ### sass-destroy:
 - If you need to remove all files added by "sass-create", execute "sass-destroy" in the same directory
