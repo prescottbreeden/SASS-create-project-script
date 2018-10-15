@@ -50,7 +50,7 @@ Bash script to generate modular SCSS folder structure for writing and organizing
 
 #### Common Watcher Bug:
 - Anytime you create a new import for main.scss you should restart the watcher
-- Press `CTRL-C` to stop the watcher and then re-execute `npm run watch:sass`
+- Press `CTRL-C` to stop the watcher and then re-execute `$ npm run watch:sass`
 
 #### sass-destroy:
 - If you need a big "undo" button to remove all files added by "sass-create", execute `$ sass-destroy` from the same directory
