@@ -46,13 +46,13 @@ This repository contains two bash scripts to generate a modular SCSS folder stru
 
 ### To Run:
 1. Create a new directory and change directory (cd) into it
-2a. Execute `$ sass-create` inside this new directory to initialize sass and static folders (Mac/Linux)
-2b. Execute `\> ..\./sass-create` (Windows)
-3. Follow prompts and options
+2. Execute `$ sass-create` inside this new directory to initialize sass and static folders (Mac/Linux)
+3. Execute `\> ..\./sass-create` (Windows)
+4. Follow prompts and options
     - Creation of an index.html file automatically includes necessary import statements
     - Creation of a git repository will perform 'git init' inside the current directory and create a .gitignore file
-4. Add the supplied npm scripts to your package.json (modify the filename locations as needed)
-5. Execute `$ npm run watch:sass` on the command line to start the watcher
+5. Add the supplied npm scripts to your package.json (modify the filename locations as needed)
+6. Execute `$ npm run watch:sass` on the command line to start the watcher
 
 #### Common Watcher Bug:
 - Anytime you create a new import for main.scss you should restart the watcher
