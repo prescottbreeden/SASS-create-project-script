@@ -1,5 +1,5 @@
 # SASS-create-project-script v1.1
-This repository contains two bash scripts to generate a modular SCSS folder structure for writing and organizing maintainable style sheets and a second script to delete all the files the script creates (see warnings below on this functionality).
+This repository contains two bash scripts to generate a modular SCSS folder structure for writing and organizing maintainable style sheets and a second script to delete all the files the script creates (see warnings below on this functionality).  Documentation for this script can also be found by opening the index.html file in a browser (note: this file is only generated if you choose 'Yes' when prompted to create an index.html file).
        
 ## Node Packages that the Script Installs as Dev Dependencies:
 - node-sass
