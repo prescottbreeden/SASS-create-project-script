@@ -1,7 +1,7 @@
 # SASS-create-project-script v1.1
-Bash script to generate modular SCSS folder structure for writing and organizing maintainable style sheets.  
+This repository contains two bash scripts to generate a modular SCSS folder structure for writing and organizing maintainable style sheets and a second script to delete all the files the script creates (see warnings below on this functionality).
        
-## Installs Node Packages as Dev Dependencies:
+## Node Packages that the Script Installs as Dev Dependencies:
 - node-sass
 - postcss-cli
 - concat
@@ -35,13 +35,18 @@ Bash script to generate modular SCSS folder structure for writing and organizing
 
 ### Steps to Install (MacOS/Linux):
 1. Install npm globally (see: https://docs.npmjs.com/cli/install)
-2. Clone or download this repository
-3. Move the create script to your bin path by executing: `$ mv sass-create /usr/local/bin` (sudo may be required)
-4. Move the destroy script to your bin path by executing: `$ mv sass-destroy /usr/local/bin` _(optional)_
+2. Clone or download this repository (https://github.com/prescottbreeden/SASS-create-project-script.git)
+3. Move the 'sass-create' script to your bin path by executing: `$ mv sass-create /usr/local/bin` (sudo may be required)
+4. Move the 'sass-destroy' script to your bin path by executing: `$ mv sass-destroy /usr/local/bin` _(optional)_
+
+### Steps to Install (Windows):
+1. Install npm globally (see: https://docs.npmjs.com/cli/install)
+2. Create a new project folder
+3. Clone or download this repository into the new project folder (https://github.com/prescottbreeden/SASS-create-project-script.git)
 
 ### To Run:
-1. Create a new project directory and change directory (cd) into it
-2. Execute `$ sass-create` to initialize sass and static folders
+1. Create a new directory and change directory (cd) into it
+2. Execute `$ sass-create` inside this new directory to initialize sass and static folders
 3. Follow prompts and options
     - Creation of an index.html file automatically includes necessary import statements
     - Creation of a git repository will perform 'git init' inside the current directory and create a .gitignore file
