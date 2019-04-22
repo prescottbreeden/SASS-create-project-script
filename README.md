@@ -47,7 +47,7 @@ This repository contains two bash scripts to generate a modular SCSS folder stru
 ### To Run:
 1. Create a new directory and change directory (cd) into it
 2. Execute `$ sass-create` inside this new directory to initialize sass and static folders (Mac/Linux)
-3. Execute `\> ..\./sass-create` (Windows)
+3. Execute `$ .././sass-create` (Windows)
 4. Follow prompts and options
     - Creation of an index.html file automatically includes necessary import statements
     - Creation of a git repository will perform 'git init' inside the current directory and create a .gitignore file
