@@ -31,7 +31,9 @@ This repository contains two bash scripts to generate a modular SCSS folder stru
 # Installation
 ### Requirements:
   - npm
-  - bash shell (e.g. terminal, iTerm, git-bash, etc.)
+  - bash shell
+       - MacOS/Linux: any terminal
+       - Windows: this script currently will _only_ run with 'git-bash' or 'cmder'
 
 ### Steps to Install (MacOS/Linux):
 1. Install npm globally (see: https://docs.npmjs.com/cli/install)
@@ -45,14 +47,13 @@ This repository contains two bash scripts to generate a modular SCSS folder stru
 3. Clone or download this repository into the new project folder (https://github.com/prescottbreeden/SASS-create-project-script.git)
 
 ### To Run:
-1. Create a new directory and change directory (cd) into it
-2. Execute `$ sass-create` inside this new directory to initialize sass and static folders (Mac/Linux)
-3. Execute `$ .././sass-create` (Windows)
-4. Follow prompts and options
+1. Execute `$ sass-create` (Mac/Linux) `$ ./sass-create` (Windows) inside the cloned directory to execute the script and initialize sass and static folders 
+2. Follow prompts and options
     - Creation of an index.html file automatically includes necessary import statements
     - Creation of a git repository will perform 'git init' inside the current directory and create a .gitignore file
-5. Add the supplied npm scripts to your package.json (modify the filename locations as needed)
-6. Execute `$ npm run watch:sass` on the command line to start the watcher
+3. Open the index.html file if you selected that option or return here to find the recommended scripts to add to your package.json file.
+3. **Add the supplied npm scripts to your package.json/** (modify the filename locations as needed)
+4. Execute `$ npm run watch:sass` on the command line to start the watcher
 
 #### Common Watcher Bug:
 - Anytime you create a new import for main.scss you should restart the watcher
