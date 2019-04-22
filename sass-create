@@ -53,15 +53,24 @@ HTML_BOILER='<!DOCTYPE html>
 	</header>
 	<main class="main">
 		<h2 class="main__about">
-			Pre-modularized SCSS folder structure for writing and 
+			Modular SCSS folder structure for writing and 
 			organizing maintainable style sheets
 		</h2>
 		<h2 class="main__heading">Recommended Scripts:</h2>
 		<div class="main__scripts">
-			<p class="main__overview--text">
-				Add the following scripts below to your 
-				package.json file inside the "scripts" key.
-			</p>
+      <ol>
+        <li class="main__overview--text">
+          Add the following scripts below to your 
+          package.json file inside the "scripts" key.
+			  </li>
+        <li class="main__overview--text">
+          Execute "npm run watch:sass" - this will activate the file watcher.
+			  </li>
+        <li class="main__overview--text">
+          Edit any file with an underscore and .scss with valid css and the
+          compiler will overwrite the existing styles.css.
+			  </li>
+      </ol>
 			<pre>
 				<code class="main__scripts--codeblock">
 				'${SCRIPT_CODE_BLOCK}'
