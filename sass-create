@@ -322,21 +322,41 @@ npm i --save-dev -s node-minify
 fi
 
 # initialize file structure and install sass dependencies
-read -p 'Would you like to create a git repository? [y/n]: ' CREATE_GIT
 
-if [[ "${CREATE_GIT}" == 'y' || "${CREATE_GIT}" == 'Y' || "${CREATE_GIT}" == 'yes' ]]
+# check if directory is already under version control
+git status > /dev/null 2>&1 # silence output of git status command
+if [ $? -eq 1 ] # 'git' command not found by shell
 then
-
-# initialize git repository
-echo '___ INITIALIZING GIT REPOSITORY >>>'
-git init
-echo 'node_modules/' > .gitignore
-
-# change scripts
-#sed -i 's/"test": "echo \\"Error: no test specified\\" && exit 1"/"balls": "echo \\"Yay, we did a thing!\\""/g' package.json
-
+  GIT_REPO=-1 # no repository found
 else
-	echo '___ GIT NOT INITIALIZED ___'
-	echo '___ SCRIPT COMPLETED ___'
-  echo '___ See documentation for information on running package scripts ___'
+  if git status 2>&1 | grep -q "fatal" # git encountered an error
+  then
+    GIT_REPO=-1 
+  else
+    GIT_REPO=1 # directory is part of a git repository
+  fi
 fi
+
+if [ $GIT_REPO -eq -1 ]
+then
+  read -p 'Would you like to create a git repository? [y/n]: ' CREATE_GIT
+
+  if [[ "${CREATE_GIT}" == 'y' || "${CREATE_GIT}" == 'Y' || "${CREATE_GIT}" == 'yes' ]]
+  then
+
+  # initialize git repository
+    echo '___ INITIALIZING GIT REPOSITORY >>>'
+    git init
+    echo 'node_modules/' > .gitignore
+
+    # change scripts
+    #sed -i 's/"test": "echo \\"Error: no test specified\\" && exit 1"/"balls": "echo \\"Yay, we did a thing!\\""/g' package.json
+
+  else
+    echo '___ GIT NOT INITIALIZED ___'
+  fi
+else
+  echo 'Directory is under version control -- skipping git initialization'
+fi
+echo '___ SCRIPT COMPLETED ___'
+echo '___ See documentation for information on running package scripts ___'
